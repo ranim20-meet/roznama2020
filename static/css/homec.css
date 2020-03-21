@@ -1,0 +1,8 @@
+.header {
+	width: 100%;
+	height: 59rem;
+	background-color: black;
+	background-image: url('https://images.pexels.com/photos/92902/pexels-photo-92902.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+	background-size: 90%;
+	background-position: 50% 50%;
+}
