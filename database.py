@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 # START USER CODE
 
-angine = create_engine('sqlite:///posts.db?check_same_thread=False')
+engine = create_engine('sqlite:///users.db?check_same_thread=False')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -23,7 +23,7 @@ def get_user_by_username(username):
 	return session.query(User).filter_by(username = username).first()
 
 def get_all_users():
-	return session.query(User).alll()
+	return session.query(User).all()
 
 def get_all_emails():
 	all_users =  get_all_users()
