@@ -19,9 +19,11 @@ def home():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+	if request.method == 'POST':
+		first_name
 	return render_template('signup.html')
 
-@app.route('/signin'. methods = ['GET', 'POST'])
+@app.route('/signin', methods = ['GET', 'POST'])
 def signin():
 	return render_template('sign_in.html')
 
