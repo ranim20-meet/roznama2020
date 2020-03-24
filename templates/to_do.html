@@ -68,8 +68,61 @@
 		</div>
 	</nav>
 	<!-- NAVBAR END -->
+	
+	<!-- TODO LIST START -->
+	<table>
+		<tr>
+			<th>Task</th>
+			<th>Status</th>
+			<th>Done</th>
+		</tr>
+	{% for item in todo_items %}
+		<tr>
+			<td>{{item.item_title}}</td>
+			{% if item.item_urgency == 'High' %}
+			<td style="background-color: #f06c6c">
+			{{item.item_urgency}}</td>
+			{% elif item.item_urgency == 'Medium' %}
+			<td style="background-color: #ebd173">{{item.item_urgency}}</td>
+			{% elif item.item_urgency == 'Low' %}
+			<td style="background-color: #abeb73">{{item.item_urgency}}</td>
+			{% endif %}
+			<td>
+				<form action='/delete/{{item.item_id}}' method='post'>
+					<input type="submit" name="delete" value="Done">
+				</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
 
+	<button onclick="toggle()">Add Task!</button>
+	<form style="display: none;"id='toggle' action="/todo/user/{{user.username}}" method='post'>
+		<label>Task:</label>
+		<input type="text" name="title">
+		<br>
+		<label>Urgency:</label>
+		<br>
+		<input type="radio" name="urgency" value="High">
+  		<label for="high">High</label><br>
+  		<input type="radio" name="urgency" value="Medium">
+  		<label for="medium">Medium</label><br>
+  		<input type="radio" name="urgency" value="Low">
+  		<label for="low">Low</label><br>
+  		<input type="submit" name="submit" value="submit">
+  	</form>
 
+	<script type="text/javascript">
+		function toggle() {
+			console
+  			var x = document.getElementById("toggle");
+ 			 if (x.style.display === "none") {
+    			x.style.display = "block";
+  			} else {
+    			x.style.display = "none";
+  			}
+		}
+	</script>
 
 
 	<!-- BOOTSTRAP JS -->

@@ -17,7 +17,7 @@ app.config['MAIL_USE_SSL'] = True
 def home():
     return render_template('home.html')
 
-@app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['POST'])
 def signup():
 	if request.method == 'POST':
 		first_name = request.form['first_name']
@@ -26,11 +26,7 @@ def signup():
 		password = request.form['password']
 		email_adr = request.form['email']
 		add_user(first_name = first_name, last_name = last_name, username = username, password = password, email_adr = email_adr)
-		user = get_user_by_username(username)
-		login_session['name'] = user.username
-		login_session['logged_in'] = True
-		return render_template("home.html")
-	return render_template('signup.html')
+	return render_template('sign_in.html')
 
 @app.route('/signin', methods = ['GET', 'POST'])
 def signin():
@@ -40,10 +36,26 @@ def signin():
 		if user and user.verify_password(request.form['password']):
 			login_session['name'] = user.username
 			login_session['logged_in'] = True
-			return render_template('home.html')
+			return redirect('/todo/user/'+user.username)
 		else:
 			print("false inp")
 	return render_template('sign_in.html')
+
+@app.route('/todo/user/<string:username>', methods = ['GET', 'POST'])
+def todo(username):
+	user = get_user_by_username(username)
+	if request.method == 'POST':
+		item_title = request.form['title']
+		item_urgency = request.form['urgency']
+		parent_username = username
+		add_todo_item(parent_username = parent_username, item_title = item_title, item_urgency = item_urgency)
+	todo_items = get_items_by_user_username(username)
+	return render_template('to_do.html', user=user, todo_items=todo_items)
+
+@app.route('/delete/<int:item_id>', methods = ['POST'])
+def delete_item(item_id):
+	delete_item_by_item_id(item_id)
+	return redirect('/todo/user/'+login_session['name'])
 
 if __name__ == '__main__':
 	app.run(debug=True)
