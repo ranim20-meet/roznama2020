@@ -4,13 +4,13 @@ from flask import session as login_session
 # from flask_mail import Mail, Message
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = 'you-will-never-guess'
-# app.config['MAIL_SERVER']='smtp.gmail.com'
-# app.config['MAIL_PORT'] = 465
-# app.config['MAIL_USERNAME'] = 'greenwallx4@gmail.com'
-# app.config['MAIL_PASSWORD'] = 'funwithmeet19'
-# app.config['MAIL_USE_TLS'] = False
-# app.config['MAIL_USE_SSL'] = True
+app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'greenwallx4@gmail.com'
+app.config['MAIL_PASSWORD'] = 'funwithmeet19'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 # mail = Mail(app)
 
 @app.route('/', methods=['GET', 'POST'])

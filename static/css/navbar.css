@@ -1,0 +1,21 @@
+* {
+  outline: none;
+}
+
+.navbar-pos-f {
+  position: fixed;
+  position: -webkit-fixed; /* Safari */
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.light-blue-bg {
+  background-color: #89cff0;
+}
+
+
+
+.float-r {
+	float: right;
+}
