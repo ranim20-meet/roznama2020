@@ -1,8 +1,98 @@
+html, body {
+	height: 100%;
+}
+
+
+
 .header {
+	background-color: #89cff0;
+	height: 100%;
 	width: 100%;
-	height: 59rem;
-	background-color: black;
-	background-image: url('https://images.pexels.com/photos/92902/pexels-photo-92902.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
-	background-size: 90%;
-	background-position: 50% 50%;
+
+}
+
+.header-desc {
+	left: 0;
+	width: 48%;
+	height: 70%;
+	padding:5%; 
+	background-color: #fffafa;
+	border-bottom-right-radius: 4em;
+}
+
+.header-desc-plus {
+	position: absolute;
+	/*background-color: #fffafa;*/
+	width: 40%;
+	height: 60%;
+	right: 0;
+	top: 18%;
+}
+
+.logo-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 1.5em;
+	width: 12em;
+	height: 12em;
+	background-color: rgba(255,255,255,1);
+	box-shadow: 10px 10px 0px #121212;
+}
+
+.header-text {
+	margin: 0;
+	position: relative;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: #121212;
+	font-size: 2em;
+}
+
+.header-desc-plus .header-text {
+	color: #FFFAFA;
+}
+
+.logo-container img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.DropDownNav hr {
+	/*height: 10em;*/
+	color: black;
+	width: 1em;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+.title {
+	font-size: 2em;
+	padding-bottom: 5%;
+}
+
+.pad-0 {
+	padding: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
 }

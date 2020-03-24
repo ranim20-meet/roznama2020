@@ -5,9 +5,9 @@
 
 	<title>Roznama</title>
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/homec.css') }}">
-	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/homec.css') }}">
 </head>
 <body>
 	<!-- <form id="login_form">
@@ -22,12 +22,28 @@
 		<input type="submit" value="submit">
 	</form>
 	<p>Don't have an acount? <a href="{{url_for('signup')}}">Sign up!</a></p> -->
-	<div class="header">
-		<div class="header-text">
-			<h1><img src="{{ url_for('static', filename='images/logo.png') }}">Roznama</h1>
-			<small>Welcome to Roznama, a friend to help you pave a path to a more organized and stress-free lifestyle.</small>
+	<div class="DropDownNav">
+		<hr height="10" id="marg-tl-2">
+		<hr>
+		<hr>
+	</div>
+
+
+	<div class="header container-fluid pad-0">
+		<div class="header-desc">
+			<div class="header-text">
+				<h1 class="title">Roznama</h1>
+				<p>Welcome to Roznama, a friend to help you pave a path to a more organized and stress-free lifestyle.</p>
+			</div>
+		</div>
+		<div class="header-desc-plus">
+			<p class="header-text">We care about your mental health first and then your schedule as to assure a healthy lifestyle and good performance!<br><br>If you would like to know more about the importance of mental health click here.</p>
+		</div>
+		<div class="logo-container">
+			<img src="{{ url_for('static', filename='images/logo.png') }}" width="100%">
 		</div>
 	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
