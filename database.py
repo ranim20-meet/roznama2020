@@ -41,6 +41,12 @@ def get_all_emails():
 		emails.append(user.email_adr)
 	return emails
 
+def delete_all():
+   """
+   Delete all users
+   """
+   session.query(User).delete()
+   session.commit()
 
 #END USER CODE
 #-------------
