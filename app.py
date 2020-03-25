@@ -15,7 +15,7 @@ app.config['MAIL_USE_SSL'] = True
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+	return render_template('home.html')
 
 @app.route('/signup', methods=['POST'])
 def signup():
@@ -45,7 +45,7 @@ def signin():
 def todo(username):
 	print(username)
 	if (login_session['logged_in'] == False):
-		return redirect('/signin')
+		return render_template('sign_in.html')
 	else:
 		user = get_user_by_username(login_session['name'])
 		if request.method == 'POST':

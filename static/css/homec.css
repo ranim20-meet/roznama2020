@@ -4,6 +4,10 @@ html, body {
 
 /* HEADER STYLING */
 
+.marg-top {
+	margin-top: 4em;
+}
+
 .header {
 	background-color: #89cff0;
 	height: 100%;
@@ -27,6 +31,7 @@ html, body {
 	height: 60%;
 	right: 0;
 	top: 18%;
+	padding-left: 2em;
 }
 
 .logo-container {
@@ -51,6 +56,7 @@ html, body {
 	transform: translate(-50%, -50%);
 	color: #121212;
 	font-size: 2em;
+
 }
 
 .header-desc-plus .header-text {
