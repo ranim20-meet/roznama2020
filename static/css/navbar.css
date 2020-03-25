@@ -14,8 +14,48 @@
   background-color: #89cff0;
 }
 
+.dark-grey-bg {
+  background-color: #121212;
+}
 
 
 .float-r {
-	float: right;
+	position: absolute;
+	right: 0;
+}
+
+.font-size-1-2r {
+	font-size: 1.3em;
+}
+
+.sign {
+  width: 60%;
+  height: 25em;
+  box-shadow: 0px 0px 10px #121212;
+  border-radius: 1em;
+}
+
+.sign td {
+  padding: 2em;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.font-size-2em {
+  font-size: 1.4em;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.pad-b-2em {
+  margin-bottom: 2em;
+}
+
+form input {
+  border: none;
+  border-bottom: 2px solid #89cff0;
 }

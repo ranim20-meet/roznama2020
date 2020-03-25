@@ -57,5 +57,13 @@ def delete_item(item_id):
 	delete_item_by_item_id(item_id)
 	return redirect('/todo/user/'+login_session['name'])
 
+@app.route('/mental-health', methods=['GET', 'POST'])
+def mhealth():
+    return render_template('mental_health_sources.html')
+
+@app.route('/about-us', methods=['GET', 'POST'])
+def about():
+    return render_template('about_us.html')
+
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -9,101 +9,100 @@
 
 	<!-- BOOTSTRAP CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
 
 </head>
 <body>
 
 	<!-- NAVIGATION BAR -->
-	<nav class="navbar-pos-f navbar navbar-expand-lg font-size-2r navbar-dark navbar-pos-f light-blue-bg">
+	<nav class="navbar navbar-expand-lg font-size-2r navbar-dark light-blue-bg">
 		<!-- WEBSITE NAME -->
 		<a class="navbar-brand" href="" style="font-size: 2rem;">Roznama</a>
-		
-		<!-- TOGGLE DROP-DOWN-LIST ON SCREEN SIZE -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-			<ul class="navbar-nav mr-auto">
-
-				<!-- FIRST ITEM ON NAV-BAR -->
-
-				<li class="nav-item active">
-					<a class="nav-link" href="">Home</a>
-				</li>
-
-				<!-- SECOND ITEM ON NAV-BAR -->
-
-				<li class="nav-item">
-					<a class="nav-link" href="">Mental Health</a>
-				</li>
-
-				<!-- THIRD ITEM ON NAV-BAR -->
-
-				<li class="nav-item">
-					<a class="nav-link" href="">To-Do List</a>
-				</li>
-
-
-				<!-- FOURTH ITEM ON NAV-BAR -->
-
-				<li class="nav-item bg-custom-d">
-					<a class="nav-link" href="">Sign Up/In</a>
-				</li>
-
-				<!-- WEBPAGE IN WORK/NOT AVAILABLE -->
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
-				</li>
-			</ul>
-
-
-			<!-- <div class="nav-item my-2 my-lg-0 bg-custom-d color-w">
-			{{n}}
-			</div> -->
 		</div>
 	</nav>
 
+	<nav class="navbar-pos-f navbar navbar-expand-lg navbar-dark dark-grey-bg font-size-1-2r">
+
+	  <a class="navbar-brand" href="#" style="font-size: 1.8rem;">Roznama</a>
+
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarNav">
+
+	    <ul class="navbar-nav float-r">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+	      </li>
+
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('mhealth') }}">Mental Health</a>
+	      </li>
+
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('signin') }}">Sign Up-In</a>
+	      </li>
+<!-- 
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li> -->
+	    </ul>
+
+	  </div>
+	</nav>
 	<!-- NAVBAR END -->
 
-	<form id="login_form" action="/signin" method="post">
-		<label>Username</label>
-		<br>
-		<input type="text" name="username" placeholder="Username">
-		<br>
-		<label>Password:</label>
-		<br>
-		<input type="password" name="password" placeholder="Password">
-		<br>
-		<input type="submit" value="submit">
-	</form>
-	<p>Don't have an acount? <a href="{{url_for('signup')}}">Sign up!</a></p>
+	<br><br>
 
-	<form action="/signup" method="post">
-		<label>First Name:</label>
-		<br>
-		<input type="text" name="first_name" placeholder="First Name">
-		<br>
-		<label>Last Name:</label>
-		<br>
-		<input type="text" name="last_name" placeholder="Last Name">
-		<br>
-		<label>Username:</label>
-		<br>
-		<input type="text" name="username" placeholder="Username">
-		<br>
-		<label>Password:</label>
-		<br>
-		<input type="password" name="password" placeholder="Password">
-		<br>
-		<label>E-mail address:</label>
-		<br>
-		<input type="text" name="email" placeholder="example@emailprovider.com">
-		<br>
-		<input type="submit" name="submit" value="submit">
-	</form>
+	<!-- NAVBAR END -->
+	<center>
+	<table class="sign font-size-2em center-text">
+		<tr>
+			<td width="50%" >
+				<h1 class="top-0 pad-b-2em">Login In</h1>
+				<form id="login_form" action="/signin" method="post">
+					<label>Username:</label><br>
+					<input type="text" name="username" placeholder="Username">
+					<br>
+					<label>Password:</label><br>
+					<input class="pad-b-2em" type="password" name="password" placeholder="Password">
+					<br><br>
+					<input type="submit" value="submit">
 
+				</form>
+				<br>
+				<p>Don't have an acount? <a href="{{url_for('signup')}}">Sign up!</a></p>
+			</td>
+			<td>
+				<form action="/signup" method="post">
+					<h1>Sign Up</h1><br>
+					<label>First Name:</label>
+					<br>
+					<input type="text" name="first_name" placeholder="First Name">
+					<br>
+					<label>Last Name:</label>
+					<br>
+					<input type="text" name="last_name" placeholder="Last Name">
+					<br>
+					<label>Username:</label>
+					<br>
+					<input type="text" name="username" placeholder="Username">
+					<br>
+					<label>Password:</label>
+					<br>
+					<input type="password" name="password" placeholder="Password">
+					<br>
+					<label>E-mail address:</label>
+					<br>
+					<input type="text" name="email" placeholder="example@emailprovider.com">
+					<br>
+					<input type="submit" name="submit" value="submit">
+				</form>
+			</td>
+		</tr>
+	</table>
+	</center>
 
 
 

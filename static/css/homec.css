@@ -2,7 +2,7 @@ html, body {
   height: 100%;
 }
 
-
+/* HEADER STYLING */
 
 .header {
 	background-color: #89cff0;
@@ -66,12 +66,50 @@ html, body {
 	transform: translate(-50%, -50%);
 }
 
+/* END OF HEADER STYLING */
 
+/* BODY STYLING */
 
+/* BOXES STYLING */
+
+.content-box {
+	width: 10em;
+	height: 10em;
+	background-color: #ffe5b4;
+	border-radius: 1em;
+	margin: 2em;
+	padding-top: 4em;
+	-webkit-transition: box-shadow 0.2s, width 0.2s, margin  0.2s, height 0.2s;
+}
+
+.content-box:hover {
+	width: 10.4em;
+	margin: 1.8em;
+	height: 10.4em;
+	box-shadow: 0px 0px 5px #121212;
+	-webkit-transition: box-shadow 0.4s, width 0.4s, margin  0.4s, height 0.4s;
+}
+
+/* USEFUL STYLING CLASSES */
 
 .title {
 	font-size: 2em;
 	padding-bottom: 5%;
+}
+
+.font-size-2em {
+	font-size: 1.5em;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.align-all-center {
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .pad-0 {
@@ -80,4 +118,25 @@ html, body {
 	padding-left: 0px;
 	padding-bottom: 0px;
 	padding-top: 0px;
+}
+
+.no-style {
+	text-decoration: none;
+	color: black;
+}
+
+.no-style:link {
+  text-decoration: none;
+}
+
+.no-style:visited {
+  text-decoration: none;
+}
+
+.no-style:hover {
+  text-decoration: none;
+}
+
+.no-style:active {
+  text-decoration: none;
 }
