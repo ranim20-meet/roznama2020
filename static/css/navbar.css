@@ -20,7 +20,7 @@
 
 
 .float-r {
-	position: absolute;
+	/*position: ;*/
 	right: 0;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .sign {
-  width: 60%;
+  width: 65%;
   height: 25em;
   box-shadow: 0px 0px 10px #121212;
   border-radius: 1em;
@@ -55,7 +55,28 @@
   margin-bottom: 2em;
 }
 
-form input {
+.sign form input {
   border: none;
   border-bottom: 2px solid #89cff0;
+  margin-bottom: 1.5em;
+}
+
+.tsk-btn {
+  text-decoration: none;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  border: 2px solid #89cff0;
+  background-color: rgba(0,0,0,0);
+}
+
+.bottom {
+  margin-top: 5em;
+}
+
+.tsk-btn:hover {
+  box-shadow: 0px 10px 2px #89cff0; 
+}
+
+.index- {
+  z-index: -99;
 }

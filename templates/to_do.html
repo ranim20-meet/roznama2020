@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
 
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/todo.css') }}">
+
 </head>
 <body>
 	<!-- To do page -->
@@ -18,17 +20,16 @@
 
 	
 	<!-- NAVIGATION BAR -->
-	<nav class="navbar navbar-expand-lg font-size-2r navbar-dark light-blue-bg">
-		<!-- WEBSITE NAME -->
-		<a class="navbar-brand" href="" style="font-size: 2rem;">Roznama</a>
+	<nav class="navbar-pos-f navbar navbar-expand-lg font-size-2r navbar-dark light-blue-bg index-">
+		<a class="navbar-brand" style="font-size: 2rem;">Roznama</a>
 		</div>
 	</nav>
 
-	<nav class="navbar-pos-f navbar navbar-expand-lg navbar-dark dark-grey-bg font-size-1-2r">
+	<nav class="navbar navbar-expand-lg navbar-dark dark-grey-bg font-size-1-2r">
 
-	  <a class="navbar-brand" href="#" style="font-size: 1.8rem;">Roznama</a>
+	  <a class="navbar-brand" href="/" style="font-size: 1.8rem;">Roznama</a>
 
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <button class="navbar-toggler dark-grey-bg" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 
@@ -55,13 +56,16 @@
 	  </div>
 	</nav>
 	<!-- NAVBAR END -->
-	
+	<br><br><br>
 	<!-- TODO LIST START -->
-	<table>
-		<tr>
-			<th>Task</th>
-			<th>Status</th>
-			<th>Done</th>
+	<div class="container">
+		<center>
+			<h1>Add a task and when it is finished click done</h1><br><br>
+	<table width="100%">
+		<tr class="neat">
+			<th >Task</th>
+			<th width="15%">Urgency</th>
+			<th width="15%">Status</th>
 		</tr>
 	{% for item in todo_items %}
 		<tr>
@@ -76,14 +80,16 @@
 			{% endif %}
 			<td>
 				<form action='/delete/{{item.item_id}}' method='post'>
-					<input type="submit" name="delete" value="Done">
+					<input class="btn" type="submit" name="delete" value="Done">
 				</form>
 			</td>
 		</tr>
 	{% endfor %}
 	</table>
 
-	<button onclick="toggle()">Add Task!</button>
+	<br>
+
+	<button class="tsk-btn bottom" onclick="toggle()">Add Task</button>
 	<form style="display: none;"id='toggle' action="/todo/user/{{user.username}}" method='post'>
 		<label>Task:</label>
 		<input type="text" name="title">
@@ -98,6 +104,8 @@
   		<label for="low">Low</label><br>
   		<input type="submit" name="submit" value="submit">
   	</form>
+  </center>
+  	</div>
 
 	<script type="text/javascript">
 		function toggle() {
