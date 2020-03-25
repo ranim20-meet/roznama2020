@@ -43,14 +43,18 @@ def signin():
 
 @app.route('/todo/user/<string:username>', methods = ['GET', 'POST'])
 def todo(username):
-	user = get_user_by_username(username)
-	if request.method == 'POST':
-		item_title = request.form['title']
-		item_urgency = request.form['urgency']
-		parent_username = username
-		add_todo_item(parent_username = parent_username, item_title = item_title, item_urgency = item_urgency)
-	todo_items = get_items_by_user_username(username)
-	return render_template('to_do.html', user=user, todo_items=todo_items)
+	print(username)
+	if (login_session['logged_in'] == False):
+		return redirect('/signin')
+	else:
+		user = get_user_by_username(login_session['name'])
+		if request.method == 'POST':
+			item_title = request.form['title']
+			item_urgency = request.form['urgency']
+			parent_username = username
+			add_todo_item(parent_username = parent_username, item_title = item_title, item_urgency = item_urgency)
+		todo_items = get_items_by_user_username(user.username)
+		return render_template('to_do.html', user=user, todo_items=todo_items)
 
 @app.route('/delete/<int:item_id>', methods = ['POST'])
 def delete_item(item_id):
