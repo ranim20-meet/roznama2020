@@ -41,7 +41,7 @@ def get_all_emails():
 		emails.append(user.email_adr)
 	return emails
 
-def delete_all():
+def delete_all_user():
    """
    Delete all users
    """
@@ -75,4 +75,8 @@ def get_items_by_user_username(parent_username):
 
 def delete_item_by_item_id(item_id):
 	session1.query(Todo).filter_by(item_id = item_id).delete()
+	session1.commit()
+
+def delete_all_items():
+	session1.query(Todo).delete()
 	session1.commit()
